@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tip calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="heading">Tip calculator</h1>
+      <p class="note">
+        <b>NOTE</b>: Every value entered in the field text should be digit
+      </p>
+      <form class="form" action="#">
+        <div class="form-control">
+          <p>How much is your bill?</p>
+          <input type="text" class="bill" placeholder="Enter Amount in naira" />
+          <small class="error"></small>
+        </div>
+        <div class="form-control">
+          <p>How many people are sharing the bill?</p>
+          <input type="number" class="number" />
+          <small class="error"></small>
+        </div>
+        <div class="form-control">
+          <p>How was the service?</p>
+          <select>
+            <option value="">Choose...</option>
+            <option value="20">Great 20%</option>
+            <option value="10">Good 10%</option>
+            <option value="2">Bad 2%</option>
+          </select>
+          <small class="error"></small>
+        </div>
+        <button class="button">Calculate</button>
+      </form>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
