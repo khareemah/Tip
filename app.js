@@ -2,7 +2,7 @@ const form = document.querySelector(".form");
 const billDOM = document.querySelector(".bill");
 const numberDOM = document.querySelector(".number");
 const serviceDOM = document.querySelector("select");
-function calculateTip() {}
+let resultDiv = document.createElement("div");
 
 form.addEventListener("submit", function(e) {
   e.preventDefault;
@@ -34,8 +34,10 @@ form.addEventListener("submit", function(e) {
   } else {
     removeError(serviceDOM);
   }
-  let resultDiv = document.createElement("div");
   resultDiv.classList.add("result");
+  billDOM.value = "";
+  numberDOM.value = "";
+  serviceDOM.value = "";
   resultDiv.innerHTML = `<p>Tip amount: <b>#${tip.toFixed(2)}</b></p>
                           <p>Total amount: <b>#${totalAmount.toFixed(2)}</b></p>
                           <p>Each person owes: <b>#${eachperson.toFixed(
@@ -44,8 +46,6 @@ form.addEventListener("submit", function(e) {
 
   `;
   form.append(resultDiv);
-
-  console.log(tip, eachperson);
 });
 function showError(input, message) {
   let formControl = input.parentElement;
